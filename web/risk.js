@@ -1,10 +1,11 @@
-<script>
+ <script>
   (function() {
     var form = document.getElementById('risk-form');
     var resultValue = document.getElementById('risk-value');
     var resultClass = document.getElementById('risk-class');
     var resultPosition = document.getElementById('risk-position');
     var matrix = document.getElementById('risk-matrix');
+    var riskCard = document.getElementById('risk-card'); // card risultato
 
     function getRiskClass(r) {
       if (r <= 6) return { label: 'Basso', css: 'rm-low' };
@@ -18,6 +19,9 @@
       cells.forEach(function(td) {
         td.classList.remove('rm-low', 'rm-medium', 'rm-high', 'rm-very-high', 'rm-selected');
       });
+      if (riskCard) {
+        riskCard.classList.remove('rm-low', 'rm-medium', 'rm-high', 'rm-very-high');
+      }
     }
 
     form.addEventListener('submit', function(e) {
@@ -44,6 +48,10 @@
       var cell = matrix.querySelector(selector);
       if (cell) {
         cell.classList.add(rc.css, 'rm-selected');
+      }
+
+      if (riskCard) {
+        riskCard.classList.add(rc.css);
       }
     });
 
