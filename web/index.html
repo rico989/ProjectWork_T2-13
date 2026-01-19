@@ -24,11 +24,11 @@ xml
       <!-- FORM P / D -->
       <form id="risk-form" class="risk-form">
         <div class="form-row">
-          <label for="probability">Probabilità (P) [1–5]</label>
+          <label for="probability">Probabilità (P) [1–4]</label>
           <input type="number" id="probability" name="probability" min="1" max="5" value="3" />
         </div>
         <div class="form-row">
-          <label for="damage">Danno (D) [1–5]</label>
+          <label for="damage">Danno (D) [1–4]</label>
           <input type="number" id="damage" name="damage" min="1" max="5" value="2" />
         </div>
         <button type="submit" class="btn-calc">Calcola R</button>
@@ -54,25 +54,15 @@ xml
               <th data-p="2">2</th>
               <th data-p="3">3</th>
               <th data-p="4">4</th>
-              <th data-p="5">5</th>
             </tr>
           </thead>
           <tbody>
-            <tr data-d="5">
-              <th class="axis">5</th>
-              <td data-p="1">5</td>
-              <td data-p="2">10</td>
-              <td data-p="3">15</td>
-              <td data-p="4">20</td>
-              <td data-p="5">25</td>
-            </tr>
             <tr data-d="4">
               <th class="axis">4</th>
               <td data-p="1">4</td>
               <td data-p="2">8</td>
               <td data-p="3">12</td>
               <td data-p="4">16</td>
-              <td data-p="5">20</td>
             </tr>
             <tr data-d="3">
               <th class="axis">3</th>
@@ -80,7 +70,6 @@ xml
               <td data-p="2">6</td>
               <td data-p="3">9</td>
               <td data-p="4">12</td>
-              <td data-p="5">15</td>
             </tr>
             <tr data-d="2">
               <th class="axis">2</th>
@@ -88,7 +77,6 @@ xml
               <td data-p="2">4</td>
               <td data-p="3">6</td>
               <td data-p="4">8</td>
-              <td data-p="5">10</td>
             </tr>
             <tr data-d="1">
               <th class="axis">1</th>
@@ -96,7 +84,6 @@ xml
               <td data-p="2">2</td>
               <td data-p="3">3</td>
               <td data-p="4">4</td>
-              <td data-p="5">5</td>
             </tr>
           </tbody>
         </table>
@@ -134,4 +121,5 @@ xml
   
 </body>
 </html>
+
 
