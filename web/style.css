@@ -1,13 +1,13 @@
 :root {
-  --bg-body: #f3f4f6;
-  --bg-card: #ffffff;
-  --bg-card-soft: #f9fafb;
-  --accent: #2563eb;
-  --accent-soft: #1d4ed8;
-  --text-main: #111827;
-  --text-muted: #6b7280;
-  --border-subtle: #e5e7eb;
-  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.10);
+  --bg-body: #0f172a;       /* blu notte */
+  --bg-card: #0b1120;       /* blu molto scuro per le card */
+  --bg-card-soft: #111827;  /* variante leggermente più chiara */
+  --accent: #38bdf8;        /* ciano */
+  --accent-soft: #0ea5e9;
+  --text-main: #e5e7eb;     /* testo chiaro */
+  --text-muted: #9ca3af;
+  --border-subtle: #1f2937;
+  --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.55);
   --radius-lg: 14px;
 }
 
@@ -16,15 +16,14 @@
   box-sizing: border-box;
 }
 
-/* Sfondo con immagine + overlay chiaro */
+/* Sfondo con gradiente blu, senza immagine */
 body {
   margin: 0;
   min-height: 100vh;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
   background:
-    linear-gradient(to bottom, rgba(243,244,246,0.95), rgba(229,231,235,0.95)),
-    url("img/background.jpeg") center/cover no-repeat fixed;
+    radial-gradient(circle at top, #1d4ed8 0%, #020617 55%, #000000 100%);
   color: var(--text-main);
 }
 
@@ -39,12 +38,13 @@ body {
 .header,
 .download-section,
 .qr-section,
-.footer {
+.footer,
+.matrix-section {
   background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-soft) 100%);
   border-radius: var(--radius-lg);
   padding: 1.75rem 1.5rem;
   margin-bottom: 1.25rem;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(148, 163, 184, 0.35);
   box-shadow: var(--shadow-soft);
   text-align: center;
 }
@@ -53,6 +53,7 @@ body {
 .header h1 {
   margin: 0 0 0.5rem;
   font-size: clamp(1.8rem, 4vw, 2.2rem);
+  color: #f9fafb;
 }
 
 .header p {
@@ -60,15 +61,18 @@ body {
   color: var(--text-muted);
 }
 
-/* Sezioni download + QR */
+/* Sezioni download + QR + matrice */
 .download-section h2,
-.qr-section h2 {
+.qr-section h2,
+.matrix-section h2 {
   margin-top: 0;
   font-size: 1.1rem;
+  color: #e5e7eb;
 }
 
 .download-section p,
-.qr-section p {
+.qr-section p,
+.matrix-section p {
   margin-top: 0.25rem;
   color: var(--text-muted);
 }
@@ -85,20 +89,20 @@ body {
   text-decoration: none;
   font-weight: 500;
   border-radius: 999px;
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.30);
+  border: 1px solid rgba(15, 23, 42, 0.6);
+  box-shadow: 0 10px 22px rgba(56, 189, 248, 0.50);
   transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
 }
 
 .btn-download:hover {
   transform: translateY(-1px);
   filter: brightness(1.05);
-  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.40);
+  box-shadow: 0 16px 32px rgba(56, 189, 248, 0.70);
 }
 
 .btn-download:active {
   transform: translateY(0);
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.6);
 }
 
 /* QR section */
@@ -112,7 +116,7 @@ body {
 #qrcode {
   margin-top: 1rem;
   padding: 0.75rem;
-  background-color: #ffffff;
+  background-color: #020617;
   border-radius: 12px;
   border: 1px solid var(--border-subtle);
 }
@@ -140,33 +144,14 @@ body {
   .download-section {
     align-self: flex-start;
   }
-  /* Sezione calcolo R e matrice */
-.matrix-section {
-  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-soft) 100%);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem 1.5rem;
-  margin-bottom: 1.25rem;
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-soft);
-  text-align: center;
-}
-
-.matrix-section h2 {
-  margin-top: 0;
-  font-size: 1.1rem;
-}
-
-.matrix-section p {
-  margin-top: 0.25rem;
-  color: var(--text-muted);
 }
 
 /* Form input P e D */
 .risk-form {
   display: flex;
-  flex-wrap: wrap;          /* così su schermi piccoli può andare a capo */
-  justify-content: center;  /* centra tutto il blocco orizzontalmente */
-  align-items: flex-end;    /* allinea in basso le caselle e il bottone */
+  flex-wrap: wrap; /* così su schermi piccoli può andare a capo */
+  justify-content: center; /* centra tutto il blocco orizzontalmente */
+  align-items: flex-end; /* allinea in basso le caselle e il bottone */
   gap: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -181,6 +166,7 @@ body {
 .form-row label {
   font-size: 0.9rem;
   margin-bottom: 0.25rem;
+  color: var(--text-muted);
 }
 
 .form-row input[type="number"] {
@@ -188,6 +174,8 @@ body {
   border-radius: 8px;
   border: 1px solid var(--border-subtle);
   font: inherit;
+  background-color: #020617;
+  color: #e5e7eb;
 }
 
 /* Bottone calcolo */
@@ -197,17 +185,17 @@ body {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-soft) 100%);
   color: #ffffff;
   border-radius: 999px;
-  border: 1px solid rgba(15, 23, 42, 0.1);
+  border: 1px solid rgba(15, 23, 42, 0.6);
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 8px 18px rgba(56, 189, 248, 0.55);
   transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
 }
 
 .btn-calc:hover {
   transform: translateY(-1px);
   filter: brightness(1.05);
-  box-shadow: 0 14px 26px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 14px 26px rgba(56, 189, 248, 0.75);
 }
 
 /* MATRICE */
@@ -221,6 +209,7 @@ body {
   border-collapse: collapse;
   font-size: 0.9rem;
   text-align: center;
+  color: #e5e7eb;
 }
 
 .risk-matrix th,
@@ -230,12 +219,12 @@ body {
 }
 
 .risk-matrix thead th {
-  background-color: #e5e7eb;
+  background-color: #020617;
   font-weight: 600;
 }
 
 .axis {
-  background-color: #e5e7eb;
+  background-color: #020617;
 }
 
 .axis-y {
@@ -246,37 +235,41 @@ body {
 /* Box con il risultato sotto la matrice */
 .risk-result {
   margin-top: 1rem;
-  padding: 0.75rem 0.9rem;
-  border-radius: 10px;
-  background-color: rgba(243, 244, 246, 0.8);
-  border: 1px solid var(--border-subtle);
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.55);
   font-size: 0.95rem;
+  color: #e5e7eb;
 }
 
 .risk-result strong {
-  color: var(--text-main);
+  color: #f9fafb;
 }
 
 /* Colori per le classi di rischio */
 .rm-low {
-  background-color: #bbf7d0; /* verde chiaro */
+  background-color: #15803d; /* verde scuro */
+  color: #ecfdf5;
 }
 
 .rm-medium {
-  background-color: #fef3c7; /* giallo chiaro */
+  background-color: #92400e; /* ambra */
+  color: #fffbeb;
 }
 
 .rm-high {
-  background-color: #fed7aa; /* arancione chiaro */
+  background-color: #b45309; /* arancione scuro */
+  color: #fff7ed;
 }
 
 .rm-very-high {
-  background-color: #fecaca; /* rosso chiaro */
+  background-color: #7f1d1d; /* rosso scuro */
+  color: #fef2f2;
 }
 
 /* Evidenzia cella selezionata */
 .rm-selected {
-  outline: 2px solid #111827;
+  outline: 2px solid #e5e7eb;
   outline-offset: -2px;
-}
 }
