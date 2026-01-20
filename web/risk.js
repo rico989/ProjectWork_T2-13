@@ -1,4 +1,3 @@
-js
 (function() {
   var form = document.getElementById('risk-form');
   var resultValue = document.getElementById('risk-value');
@@ -47,7 +46,7 @@ js
 
     // ora il dominio è 1–4
     if (isNaN(p) || isNaN(d) || p < 1 || p > 4 || d < 1 || d > 4) {
-      alert('Inserire valori interi tra 1 e 4 per P e D.');
+      alert('Inserire valori interi compresi tra 1 e 4 per P e D.');
       return;
     }
 
@@ -79,3 +78,4 @@ js
   // inizializza con i valori di default
   form.dispatchEvent(new Event('submit'));
 })();
+
