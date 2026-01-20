@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Calcolo del fattore di rischio R = P × D</title>
+  <title>Sviluppo di un software mobile-friendly per il calcolo del fattore di rischio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -11,14 +11,18 @@
 
     <!-- HEADER -->
     <header class="header">
-      <h1>Calcolo del fattore di rischio R = P × D</h1>
-      <p>Strumento interattivo per stimare il livello di rischio in base a probabilità (P) e danno (D).</p>
+      <h1>Fattore di rischio online</h1>
+      <p>Impara a riconoscere e a stimare in pochi passi il livello di rischio in base a probabilità e danno.</p>
     </header>
 
     <!-- SEZIONE CALCOLO + MATRICE -->
     <section class="matrix-section">
-      <h2>Calcolo interattivo del fattore di rischio</h2>
-      <p>Inserisci i valori di probabilità (P) e danno (D) per ottenere il valore di rischio R = P × D e la classe di rischio (scala 1–4).</p>
+      <h2>Verifica ora il fattore di rischio</h2>
+      <p>
+        Inserisci i valori di probabilità (P) e danno (D) per ottenere il valore di rischio e la classe di rischio (scala 1–4).
+        Se non conosci i valori da inserire, dai uno sguardo al PDF che troverai
+        <a href="#download-section">in fondo alla pagina</a>.
+      </p>
 
       <!-- FORM P / D -->
       <form id="risk-form" class="risk-form">
@@ -91,7 +95,7 @@
 
     <!-- ROW DOWNLOAD + QR -->
     <div class="sections-row">
-      <section class="download-section">
+      <section class="download-section" id="download-section">
         <h2>Scarica il documento</h2>
         <p>Clicca sul pulsante per scaricare il PDF con il quadro teorico e normativo completo.</p>
         <a class="btn-download" href="documento.pdf" target="_blank" rel="noopener">
@@ -107,17 +111,12 @@
     </div>
 
     <footer class="footer">
-      <p>Project Work – Calcolo del fattore di rischio R = P × D – Università Pegaso</p>
+      <p>Project Work L31 – Sviluppo di un software mobile-friendly per il calcolo del fattore di rischio – Università Telematica Pegaso</p>
     </footer>
   </div>
-  </main>
 
   <!-- Script QR code e calcolo del rischio -->
   <script src="qrcode.min.js"></script>
   <script src="risk-matrix.js"></script>
-  
 </body>
 </html>
-
-
-
