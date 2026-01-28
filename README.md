@@ -4,7 +4,7 @@ Project Work per Laurea Triennale Pegaso, Tema 2 - Traccia 13  "Sviluppo di un s
 ## Demo
 
 - **Demo online**: https://github.com/rico989/ProjectWork_T2-13
-- **Documento teorico/PDF**: `doc/calcolo_fattore_rischio.pdf`
+- **Documento teorico/PDF**: `doc/fattoredelrischio.pdf`
 
 ## Funzionalità
 
@@ -37,4 +37,4 @@ Project Work per Laurea Triennale Pegaso, Tema 2 - Traccia 13  "Sviluppo di un s
 ├── risk.js             # Logica di calcolo R, classi di rischio e colorazione UI
 ├── qrcode.min.js       # Libreria per generare il QR code
 └── doc/
-    └── calcolo_fattore_rischio.pdf  # Documento teorico/normativo di supporto
+    └── fattoredelrischio.pdf  # Documento teorico/normativo di supporto
