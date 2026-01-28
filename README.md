@@ -34,7 +34,7 @@ Project Work per Laurea Triennale Pegaso, Tema 2 - Traccia 13  "Sviluppo di un s
 .
 ├── index.html          # Pagina principale con form, matrice e sezioni informativi
 ├── style.css           # Stili, layout responsive e palette blu/azzurra
-├── risk-matrix.js      # Logica di calcolo R, classi di rischio e colorazione UI
+├── risk.js             # Logica di calcolo R, classi di rischio e colorazione UI
 ├── qrcode.min.js       # Libreria per generare il QR code
 └── doc/
     └── calcolo_fattore_rischio.pdf  # Documento teorico/normativo di supporto
